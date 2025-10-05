@@ -113,6 +113,7 @@ header div a{
 
 
 /* HERO */
+/* primer hijo de 'main' que sea 'section' */
 main > section:nth-child(1){
     height: 500px;
     text-align: center;
@@ -125,6 +126,7 @@ main > section:nth-child(1){
         padding-top: 36px;
     }
 
+    /* cualquier 'img' que sea hijo directo de un 'section' que sea un primer hijo de 'main' */
     & > img {
         position: absolute;
         width: 100%;
@@ -139,3 +141,146 @@ main > section:nth-child(1){
 
 
 /* FORMULARIO DE BÚSQUEDA */
+/* cualquier 'div' que sea hijo directo de un 'form' */
+form > div {
+    display: flex;
+    align-items: center;
+    background-color: var(--input-bg);
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px var(--shadow);
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+
+/* cualquier 'span' que sea hijo (directo o indirecto) de un 'form' */
+form span{
+    padding-left: 0.75rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+form input[type='text']{
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    padding: 0.75rem 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+form input[type='text']::placeholder{
+    color: #64748b;
+}
+
+form button[type='submit']{
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--primary);
+    color: white;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: inherit;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+form button[type='submit']:hover,
+form button[type='submit']:focus{
+    background-color: var(--primary-hover);
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+
+/* FEATURES SECTION */
+main > section:nth-child(2){
+    padding-inline: 1rem;
+    background-color: var(--background);
+    padding-top: 2rem;
+
+    & > header {
+        gap: 2px;
+        flex-direction: column;
+
+        h2{
+            margin-bottom: 0;
+        }
+
+        p{
+            opacity: .75;
+        }
+    }
+
+    & > div {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+}
+
+main > section:nth-child(2) h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+/* Selecciona cualquier <p> que esté dentro del primer <div> que sea hijo de otro <div>, que a su vez esté dentro del segundo <section> que sea hijo directo de <main> */
+main > section:nth-child(2) > div > div:first-child > p {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+
+/* GRID DE FEATURES */
+main > section:nth-child(2) footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+
+/* FOOTER */
+footer{
+    background-color: var(--background);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 16px;
+
+    small{
+        color: var(--text-muted);
+        font-size: 0.875rem;
+    }
+}
+
+article{
+    background-color: var(--card-bg);
+    padding: 2rem;
+    margin-bottom: 16px;
+    border-radius: 0.5rem;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+
+    svg{
+        color: var(--primary-light);
+        background: rgba(0, 153, 255, 0.3);
+        width: 64px;
+        height: 64px;
+        border-radius: 100%;
+        padding: 16px;
+    }
+
+    p{
+        color: var(--text-muted);
+    }
+
+    h3{
+        font-weight: 500;
+    }
+}
