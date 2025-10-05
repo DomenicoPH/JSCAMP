@@ -77,6 +77,18 @@ header{
     }
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    h1{
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+    }
+}
+
 
 /* NAVEGACIÓN DEL HEADER (a otras páginas) */
 nav{
@@ -88,7 +100,7 @@ nav{
         text-decoration: none;
         color: var(--text-secondary);
         transition: color 0.2s;
-        font-weight: 500;
+        font-weight: 200;
 
         &:hover, &:focus {
             color: var(--primary);
@@ -108,7 +120,12 @@ header div a{
     font-size: 0.875rem;
     font-weight: 700;
     text-decoration: none;
-    /* TODO */
+
+    &:first-child{
+        background-color: var(--primary-dark);
+        color: var(--primary-light);
+        margin: 0 0.5rem;
+    }
 }
 
 
