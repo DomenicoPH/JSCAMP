@@ -354,3 +354,46 @@ article{
         cursor: pointer;
     }
 }
+
+
+
+.results_container{
+    border: 1px solid var(--primary);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+.results_result{
+    display: flex;
+    gap: 2rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--primary);
+
+    & h3{
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding-bottom: .5rem;
+    }
+
+    & span{
+        opacity: .75;
+    }
+
+    & p{
+        padding-top: .5rem;
+    }
+
+    & button{
+        background-color: var(--primary-light);
+        color: var(--text-primary);
+        padding: 1rem 1.5rem;
+        border-radius: .5rem;
+        font-size: 1rem;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+
+        &:hover{
+            background-color: var(--primary-hover);
+        }
+    }
+}
