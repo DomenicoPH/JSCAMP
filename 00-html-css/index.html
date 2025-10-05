@@ -12,15 +12,16 @@
 <body>
     
     <header>
-        <div class="logo">
+        <a class="enlace-logo" href="./index.html">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16"><path fill="#09f" d="m15.9 5.7l-2-3.4L10 4.5V0H6v4.5L2 2.3L0 5.7L3.9 8L0 10.3l2 3.4l4-2.2V16h4v-4.5l3.9 2.2l2-3.4l-4-2.3z"/></svg>
             <h1>DevJobs</h1>
-        </div>
+        </a>
+
         <nav>
-            <a href="">Buscar</a>
-            <a href="">Empleos</a>
-            <a href="">Empresas</a>
-            <a href="">Salarios</a>
+            <a class="header-enlace" href="">Buscar</a>
+            <a class="header-enlace" href="">Empleos</a>
+            <a class="header-enlace" href="">Empresas</a>
+            <a class="header-enlace" href="">Salarios</a>
         </nav>
         <div>
             <a href="">Publicar un empleo</a>
@@ -34,7 +35,7 @@
             <h1>Encuentra el trabajo de tus sueños</h1>
             <p>Únete a la comunidad más grande de desarrolladores y encuentra tu próxima oportunidad</p>
 
-            <form role="search">
+            <form role="search" onsubmit="return false;">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
@@ -44,7 +45,8 @@
                       <path d="M21 21l-6 -6" />
                     </svg>
                     <input required type="text" placeholder="Buscar empleos por título, habilidad o empresa">
-                    <button type="submit">Buscar</button>
+                    <!-- <button type="submit">Buscar</button> -->
+                     <button type="submit" onclick="location.href='busqueda.html'">Buscar</button>
                 </div>
             </form>
         </section>

@@ -78,10 +78,12 @@ header{
     }
 }
 
-.logo{
+.enlace-logo{
     display: flex;
     align-items: center;
     gap: 1rem;
+    text-decoration: none;
+    color: var(--text-primary);
     
     h1{
         font-size: 1.25rem;
@@ -96,17 +98,17 @@ nav{
     align-items: center;
     gap: 1rem;
     display: flex;
+}
 
-    a{
-        text-decoration: none;
-        color: var(--text-secondary);
-        transition: color 0.2s;
-        font-weight: 200;
-
-        &:hover, &:focus {
-            color: var(--primary);
-            outline: none;
-        }
+.header-enlace{
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+    font-weight: 200;
+    
+    &:hover, &:focus {
+        color: var(--primary);
+        outline: none;
     }
 }
 
@@ -305,5 +307,51 @@ article{
 
     h3{
         font-weight: 500;
+    }
+}
+
+
+/* 02. BÚSQUEDAS ************************************************************** */
+
+.container{
+    padding-left: 10dvw;
+    padding-right: 10dvw;
+}
+
+.search_header{
+    padding: 2rem;
+    text-align: center;
+}
+
+.search_header_title{
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
+.search_header_text{
+    text-wrap: balance;
+    opacity: .75;
+}
+
+.desplegables_container{
+    display: flex;
+    gap: .8rem;
+    padding: .8rem 0;
+}
+.desplegable{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--input-bg);
+    padding: .5rem;
+    border-radius: .4rem;
+    padding: .4rem 1rem;
+
+    &:hover{
+        background-color: var(--primary-dark);
+        cursor: pointer;
     }
 }
