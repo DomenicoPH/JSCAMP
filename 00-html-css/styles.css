@@ -20,6 +20,7 @@
   --shadow: rgba(0, 0, 0, 0.3);
   --input-bg: #1e293b;
   --hsla-example: hsla(210, 100%, 56%, 1);
+  --main-font: 'Inter Variable'
 }
 
 /* FONTS */
@@ -34,7 +35,7 @@
 
 /* BODY */
 body{
-    font-family: system-ui;
+    font-family: var(--main-font);
     background-color: var(--background);
     color: var(--text-primary);
     min-height: 100vh;
@@ -64,7 +65,7 @@ h1 + p{
 header{
     border-bottom: 1px solid var(--border);
     background: var(--background);
-    padding: .5rem 1rem;
+    padding: 1rem 5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -141,6 +142,7 @@ main > section:nth-child(1){
 
     h1{
         padding-top: 36px;
+        font-size: 3rem;
     }
 
     /* cualquier 'img' que sea hijo directo de un 'section' que sea un primer hijo de 'main' */
@@ -162,7 +164,7 @@ main > section:nth-child(1){
 form > div {
     display: flex;
     align-items: center;
-    background-color: var(--input-bg);
+    background-color: rgba(30, 41, 59, 0.5);
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px -3px var(--shadow);
     padding: 0.5rem;
@@ -210,7 +212,7 @@ form button[type='submit']{
 form button[type='submit']:hover,
 form button[type='submit']:focus{
     background-color: var(--primary-hover);
-    outline: 2px solid white;
+    outline: 1px solid var(--text-muted);
     outline-offset: 2px;
 }
 
@@ -224,13 +226,17 @@ main > section:nth-child(2){
     & > header {
         gap: 2px;
         flex-direction: column;
+        align-items: center;
 
         h2{
-            margin-bottom: 0;
+            margin-bottom: 1rem;
         }
 
         p{
             opacity: .75;
+            max-width: 75dvw;
+            text-wrap: balance;
+            text-align: center;
         }
     }
 
