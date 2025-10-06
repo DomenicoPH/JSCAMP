@@ -376,3 +376,31 @@ main > section:nth-child(1) > img,
 .results__item-button:hover {
   background-color: var(--primary-hover);
 }
+
+.pagination{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+.pagination__item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  /* background-color: var(--primary-light); */
+}
+.pagination__item--chevron{
+  padding: 0 .5rem;
+  border-radius: 100%;
+  cursor: pointer;
+  &:hover{
+    background-color: var(--primary-dark);
+  }
+}
+.pagination__item--selection{
+  background-color: var(--primary-light);
+  border-radius: .4rem;
+}
