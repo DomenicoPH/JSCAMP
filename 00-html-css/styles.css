@@ -286,6 +286,8 @@ main > section:nth-child(1) > img,
   font-size: 0.875rem;
 }
 
+
+
 /* SEARCH PAGE */
 .search {
   padding-left: 10dvw;
@@ -338,6 +340,8 @@ main > section:nth-child(1) > img,
 
 .results__item {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 2rem;
   padding: 1.5rem;
   border-bottom: 1px solid var(--primary);
@@ -366,6 +370,7 @@ main > section:nth-child(1) > img,
   font-weight: 700;
   border: none;
   cursor: pointer;
+  height: 3rem;
 }
 
 .results__item-button:hover {
