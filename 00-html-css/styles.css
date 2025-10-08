@@ -379,10 +379,16 @@ main > section:nth-child(1) > img,
   cursor: pointer;
   height: 3rem;
 }
-
 .results__item-button:hover {
   background-color: var(--primary-hover);
 }
+
+  .is-applied{
+    background-color: #4caf50;
+    &:hover{
+      background-color: #44c848;
+    }
+  }
 
 .pagination{
   display: flex;
