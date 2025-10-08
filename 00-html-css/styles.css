@@ -292,12 +292,14 @@ main > section:nth-child(1) > img,
 
 
 
-/* SEARCH PAGE */
-.search {
-  padding-left: 10dvw;
-  padding-right: 10dvw;
+/* Container */
+.container{
+  margin: 0 20vw;
 }
 
+
+
+/* SEARCH PAGE */
 .search__header {
   padding: 2rem;
   text-align: center;
@@ -334,6 +336,10 @@ main > section:nth-child(1) > img,
 .search__filter:hover {
   background-color: var(--primary-dark);
   cursor: pointer;
+}
+
+.title__results{
+  padding: 2rem 0;
 }
 
 .results {
@@ -436,5 +442,71 @@ main > section:nth-child(1) > img,
 
 /* DETAIL PAGE */
 .breadcrumb{
+  font-size: .8rem;
+  display: flex;
+  padding: 2rem 0;
+
+  span{
+    padding: 0 .5rem;
+    opacity: .5;
+  }
+}
+.breadcrumb p{
   opacity: .5;
+}
+.breadcrumb__actual{
+  opacity: 1 !important;
+}
+
+.detalle{
+  margin: 0 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+.detalle__header{
+  padding: 1rem 0;
+}
+.detalle__header-title{
+  font-size: 2rem;
+  font-weight: 500;
+}
+.detalle__header-subtitle{
+  font-size: 1rem;
+  font-weight: 300;
+  opacity: .75;
+}
+
+
+.detalle__description-title,
+.detalle__responsabilidades h3,
+.detalle__requisitos h3,
+.detalle__empresa h3{
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
+.detalle__description-info,
+.detalle__empresa p{
+  font-size: 1rem;
+  font-weight: 300;
+  opacity: .75;
+}
+
+
+.detalle__responsabilidades li,
+.detalle__requisitos li{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+  opacity: .75;
+  line-height: 2.5rem;
+}
+.detalle__responsabilidades svg,
+.detalle__requisitos svg{
+  height: 1.5rem;
+  width: 1.5rem;
+  color: var(--primary-light);
 }
