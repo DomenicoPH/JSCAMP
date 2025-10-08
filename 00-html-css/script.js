@@ -1,5 +1,5 @@
 /*
-const botones = document.querySelectorAll('.results__item-button');
+const botones = document.querySelectorAll('.apply-button');
 botones.forEach(boton => {
     boton.addEventListener('click', () => {
       boton.textContent = '¡Aplicado!';
@@ -12,7 +12,7 @@ botones.forEach(boton => {
 const jobsList = document.querySelector('#jobs-list');
 jobsList?.addEventListener('click', (event) => {
     const element = event.target;
-    if(element.classList.contains('results__item-button')){
+    if(element.classList.contains('apply-button')){
         element.textContent = '¡Aplicado!';
         element.classList.add('is-applied')
         element.disabled = true;
