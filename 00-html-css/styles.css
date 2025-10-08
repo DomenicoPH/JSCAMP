@@ -360,6 +360,15 @@ main > section:nth-child(1) > img,
   padding-bottom: 0.5rem;
 }
 
+.results__item-enlace{
+  text-decoration: none;
+  color: var(--text-primary);
+  &:hover{
+    text-decoration: underline;
+    color: var(--primary-light);
+  }
+}
+
 .results__item-company {
   opacity: 0.75;
 }
