@@ -205,6 +205,10 @@ main > section:nth-child(1) > img,
   outline: 1px solid var(--text-muted);
   outline-offset: 2px;
 }
+.hero__form-button:disabled {
+  opacity: .5;
+  pointer-events: none;
+}
 
 /* FEATURES */
 .features {
