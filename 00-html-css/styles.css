@@ -431,3 +431,10 @@ main > section:nth-child(1) > img,
   background-color: var(--primary-light);
   border-radius: .4rem;
 }
+
+
+
+/* DETAIL PAGE */
+.breadcrumb{
+  opacity: .5;
+}
