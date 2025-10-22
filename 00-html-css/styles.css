@@ -410,35 +410,35 @@ main > section:nth-child(1) > img,
   justify-content: center;
   gap: 1rem;
   padding-bottom: 1rem;
-}
-.pagination__item{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 1rem;
 
-  &:hover{
-    background-color: var(--primary-dark);
+  a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 1rem;
     border-radius: .4rem;
     cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover, &:focus{
+      background-color: var(--primary-dark);
+    }
+
+    &:active{
+      transform: scale(.9);
+    }
+
+    &.is-active{
+      background-color: var(--primary-light);
+      color: white;
+      pointer-events: none;
+    }
   }
 }
-.pagination__item--chevron{
-  padding: 0 .5rem;
-  border-radius: 100%;
-  cursor: pointer;
-  &:hover{
-    background-color: var(--primary-dark);
-  }
-}
-.pagination__item--selection{
-  background-color: var(--primary-light);
-  border-radius: .4rem;
-}
-
-
 
 /* DETAIL PAGE */
 .breadcrumb{
