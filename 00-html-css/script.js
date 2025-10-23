@@ -25,7 +25,37 @@ callToAction?.addEventListener('click', handleApplyClick);
 
 
 // Filter
-const filter = document.querySelector('#filter-technology')
+const filter = document.querySelector('#filter-location')
+const mensaje = document.querySelector('#filter-selected-value')
+const jobs = document.querySelectorAll('.results__item')
 filter.addEventListener('change', () => {
-    console.log(filter.value)
+    const selectedValue = filter.value;
+    if(selectedValue){
+        mensaje.textContent = `Has seleccionado ${selectedValue}`
+    } else {
+        mensaje.textContent = 'No has seleccionado nada'
+    }
+
+    jobs.forEach(job => {
+        //const modalidad = job.dataset.modalidad;
+        const modalidad = job.getAttribute('data-modalidad');
+        if(selectedValue === '' || selectedValue === modalidad){
+            job.style.display = 'flex'
+        } else {
+            job.style.display = 'none'
+        }
+    })    
+})
+
+
+//const searchInput = document.querySelector('#empleos-search-input');
+//searchInput.addEventListener('input', () => { console.log(searchInput.value) });
+//searchInput.addEventListener('blur', () => { console.log('Se dispara cuando el campo queda fuera de foco') })
+//document.addEventListener('keydown', (event) => { console.log('Tecla presionada: ', event.key) })
+
+
+const searchForm = document.querySelector('#empleos-search-form');
+searchForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    console.log('submit');
 })
