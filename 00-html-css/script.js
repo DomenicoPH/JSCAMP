@@ -40,9 +40,9 @@ filter.addEventListener('change', () => {
         //const modalidad = job.dataset.modalidad;
         const modalidad = job.getAttribute('data-modalidad');
         if(selectedValue === '' || selectedValue === modalidad){
-            job.style.display = 'flex'
+            job.classList.remove('is-hidden');
         } else {
-            job.style.display = 'none'
+            job.classList.add('is-hidden');
         }
     })    
 })

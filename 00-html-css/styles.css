@@ -383,6 +383,10 @@ main > section:nth-child(1) > img,
   gap: 2rem;
   padding: 1.5rem;
   border-bottom: 1px solid var(--primary);
+
+  &.is-hidden{
+    display: none;
+  }
 }
 .results__item:last-child{
   border-bottom: none;
