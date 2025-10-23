@@ -508,8 +508,8 @@ main > section:nth-child(1) > img,
 }
 .detalle__responsabilidades svg,
 .detalle__requisitos svg{
-  height: 1.5rem;
-  width: 1.5rem;
+  min-height: 1.5rem;
+  min-width: 1.5rem;
   color: var(--primary-light);
 }
 
