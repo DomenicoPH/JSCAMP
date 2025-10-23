@@ -39,11 +39,8 @@ filter.addEventListener('change', () => {
     jobs.forEach(job => {
         //const modalidad = job.dataset.modalidad;
         const modalidad = job.getAttribute('data-modalidad');
-        if(selectedValue === '' || selectedValue === modalidad){
-            job.classList.remove('is-hidden');
-        } else {
-            job.classList.add('is-hidden');
-        }
+        const isShown = selectedValue === '' || selectedValue === modalidad;
+        job.classList.toggle('is-hidden', !isShown)
     })    
 })
 
