@@ -27,8 +27,11 @@ callToAction?.addEventListener('click', handleApplyClick);
 // Filter
 const filter = document.querySelector('#filter-location')
 const mensaje = document.querySelector('#filter-selected-value')
-const jobs = document.querySelectorAll('.results__item')
+
 filter.addEventListener('change', () => {
+    
+    const jobs = document.querySelectorAll('.results__item')
+
     const selectedValue = filter.value;
     if(selectedValue){
         mensaje.textContent = `Has seleccionado ${selectedValue}`
@@ -50,9 +53,34 @@ filter.addEventListener('change', () => {
 //searchInput.addEventListener('blur', () => { console.log('Se dispara cuando el campo queda fuera de foco') })
 //document.addEventListener('keydown', (event) => { console.log('Tecla presionada: ', event.key) })
 
-
-const searchForm = document.querySelector('#empleos-search-form');
+/*const searchForm = document.querySelector('#empleos-search-form');
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
     console.log('submit');
+})*/
+
+// Fetch
+const container = document.querySelector('.results');
+
+fetch('./data.json')
+.then( response => response.json() )
+.then( jobs => {
+    jobs.forEach(job => {
+        const article = document.createElement('article')
+        
+        article.className = 'results__item'
+        article.dataset.modalidad = job.data.modalidad
+        article.dataset.nivel = job.data.nivel
+        article.dataset.technology = job.data.technology
+
+        article.innerHTML = `
+            <div>
+              <h3 class="results__item-title">${job.titulo}</h3>
+              <p class="results__item-company">${job.empresa} | ${job.ubicacion}</p>
+              <p class="results__item-description">${job.descripcion}</p>
+            </div>
+            <button class="apply-button">Aplicar</button>
+        `
+        container.appendChild(article);
+    })
 })
