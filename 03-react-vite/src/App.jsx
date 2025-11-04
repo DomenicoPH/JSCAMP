@@ -33,18 +33,24 @@ function Footer(){
   )
 }
 
+function Pagination(){
+  return(
+    <nav className="pagination">
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></a>
+      <a href="#" className="is-active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+    </nav>
+  )
+}
 
-
-
-function App() {
-
-  return (
+function SearchFormSection(){
+  return(
     <>
-
-      <Header />
-
-      <div className="search container">
-        <section className="search__header">
+      <section className="search__header">
           <h2 className="search__header-title">Encuentra tu próximo trabajo</h2>
           <p className="search__header-text">Explora miles de oportunidades en el sector tecnológico</p>
         </section>
@@ -100,22 +106,38 @@ function App() {
           </form>    
 
         </section>
+    </>
+  )
+}
 
-        <h2 className="title__results">Resultados de búsqueda</h2>
+function JobListings(){
+  return(
+    <>
+      <h2 className="title__results">Resultados de búsqueda</h2>
+      <section id="jobs-list" className="results"></section>
+    </>
+  )
+}
 
-        <section id="jobs-list" className="results"></section>
+
+
+
+function App() {
+
+  return (
+    <>
+
+      <Header />
+
+      <div className="search container">
+        
+        <SearchFormSection />
+
+        <JobListings />
 
       </div>
 
-      <nav className="pagination">
-        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></a>
-        <a href="#" className="is-active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
-      </nav>
+      <Pagination />
 
       <Footer />
 
