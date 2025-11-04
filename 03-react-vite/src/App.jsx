@@ -1,30 +1,47 @@
+function Header(){
+  return(
+    <header className="header">
+      <a className="header__logo-link" href="./index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16">
+          <path fill="#09f" d="m15.9 5.7l-2-3.4L10 4.5V0H6v4.5L2 2.3L0 5.7L3.9 8L0 10.3l2 3.4l4-2.2V16h4v-4.5l3.9 2.2l2-3.4l-4-2.3z"/>
+        </svg>
+        <h1 className="header__logo-text">DevJobs</h1>
+      </a>
+
+      <nav className="header__nav">
+        <a className="header__nav-link" href="./empleos.html">Empleos</a>
+        <a className="header__nav-link" href="#">Empresas</a>
+        <a className="header__nav-link" href="#">Salarios</a>
+      </nav>
+
+      <div className="header__actions">
+        <devjobs-avatar
+          service="github"
+          username="DomenicoPH"
+          size="24"
+        ></devjobs-avatar>
+      </div>
+    </header>
+  )
+};
+
+function Footer(){
+  return(
+    <footer className="footer">
+      <small className="footer__text">&copy; 2025 DevJobs. Todos los derechos reservados.</small>
+    </footer>
+  )
+}
+
+
+
+
 function App() {
 
   return (
     <>
 
-      <header className="header">
-        <a className="header__logo-link" href="./index.html">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16">
-            <path fill="#09f" d="m15.9 5.7l-2-3.4L10 4.5V0H6v4.5L2 2.3L0 5.7L3.9 8L0 10.3l2 3.4l4-2.2V16h4v-4.5l3.9 2.2l2-3.4l-4-2.3z"/>
-          </svg>
-          <h1 className="header__logo-text">DevJobs</h1>
-        </a>
-
-        <nav className="header__nav">
-          <a className="header__nav-link" href="./empleos.html">Empleos</a>
-          <a className="header__nav-link" href="#">Empresas</a>
-          <a className="header__nav-link" href="#">Salarios</a>
-        </nav>
-
-        <div className="header__actions">
-          <devjobs-avatar
-            service="github"
-            username="DomenicoPH"
-            size="24"
-          ></devjobs-avatar>
-        </div>
-      </header>
+      <Header />
 
       <div className="search container">
         <section className="search__header">
@@ -100,9 +117,7 @@ function App() {
         <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
       </nav>
 
-      <footer className="footer">
-        <small className="footer__text">&copy; 2025 DevJobs. Todos los derechos reservados.</small>
-      </footer>
+      <Footer />
 
     </>
   )
