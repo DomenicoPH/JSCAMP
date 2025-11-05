@@ -1,24 +1,39 @@
+import styles from './SearchFormSection.module.css';
+
 export function SearchFormSection(){
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('submit del formulario de búsqueda')
+  }
+
   return(
     <>
-      <section className="search__header">
-          <h2 className="search__header-title">Encuentra tu próximo trabajo</h2>
-          <p className="search__header-text">Explora miles de oportunidades en el sector tecnológico</p>
+      <section className={styles.header}>
+          <h2 className={styles.headerTitle}>Encuentra tu próximo trabajo</h2>
+          <p className={styles.headerText}>Explora miles de oportunidades en el sector tecnológico</p>
         </section>
 
         <section>
-          <form id="empleos-search-form" className="search__form" role="search">
+          <form onSubmit={handleSubmit} id="empleos-search-form" className={styles.form} role="search">
 
-            <div className="search__searchbar">
+            <div className={styles.searchbar}>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1">
                 <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
                 <path d="M21 21l-6 -6" />
               </svg>
-              <input className="hero__form-input" name="search" id="empleos-search-input" required type="text" placeholder="Buscar trabajos, empresas o habilidades" />
+              <input 
+                className={styles.formInput} 
+                name="search" 
+                id="empleos-search-input" 
+                required type="text" 
+                placeholder="Buscar trabajos, empresas o habilidades" 
+              />
+              <button type="submit" className="">Buscar</button>
             </div>
 
-            <div className="search__filters">
-              <select className="search__filter" id="filter-technology">
+            <div className={styles.search__filters}>
+              <select id="filter-technology">
                 <option value="">Tecnología</option>
                 <optgroup label="Tecnologías populares">
                   <option value="javascript">JavaScript</option>
@@ -36,7 +51,7 @@ export function SearchFormSection(){
                 <option value="php">PHP++</option>
               </select>
 
-              <select className="search__filter" id="filter-location">
+              <select id="filter-location">
                 <option value="">Ubicación</option>
                 <option value="remoto">Remoto</option>
                 <option value="cdmx">Ciudad de México</option>
@@ -45,7 +60,7 @@ export function SearchFormSection(){
                 <option value="barcelona">Barcelona</option>
               </select>
 
-              <select className="search__filter" id="filter-nivel">
+              <select id="filter-nivel">
                 <option value="">Nivel de experiencia</option>
                 <option value="junior">Junior</option>
                 <option value="mid">Mid-level</option>
