@@ -1,3 +1,4 @@
+import jobsData from './data.json';
 import { useState } from "react"
 import { Footer } from "./components/Footer.jsx"
 import { Header } from "./components/Header.jsx"
@@ -5,16 +6,22 @@ import { JobListings } from "./components/JobListings.jsx"
 import { Pagination } from "./components/Pagination.jsx"
 import { SearchFormSection } from "./components/SearchFormSection.jsx"
 
+const RESULTS_PER_PAGE = 4;
+
 function App() {
 
-  console.log('Render App');
-
+  // Lógica de paginación
   const [ currentPage, setCurrentPage ] = useState(1);
-  const totalPages = 5;
+  const totalPages = Math.ceil(jobsData.length / RESULTS_PER_PAGE);
 
+  const pageResults = jobsData.slice(
+    (currentPage - 1) * RESULTS_PER_PAGE,
+    currentPage * RESULTS_PER_PAGE
+  );
   const handlePageChange = (page) => {
     setCurrentPage(page);
-  }
+  };
+  // Lógica de paginación
 
   return (
     <>
@@ -25,7 +32,7 @@ function App() {
         
         <SearchFormSection />
 
-        <JobListings />
+        <JobListings jobsData={pageResults} />
 
       </div>
 

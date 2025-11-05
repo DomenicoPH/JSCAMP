@@ -1,7 +1,6 @@
-import jobsData from '../data.json';
 import { JobCard } from './JobCard';
 
-export function JobListings(){
+export function JobListings({jobsData}){
 
   return(
     <>
