@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Footer } from "./components/Footer.jsx"
 import { Header } from "./components/Header.jsx"
 import { JobListings } from "./components/JobListings.jsx"
@@ -6,8 +7,13 @@ import { SearchFormSection } from "./components/SearchFormSection.jsx"
 
 function App() {
 
+  console.log('Render App');
+
+  const [ currentPage, setCurrentPage ] = useState(1);
+  const totalPages = 5;
+
   const handlePageChange = (page) => {
-    console.log(`Cambiando a la página ${page}`);
+    setCurrentPage(page);
   }
 
   return (
@@ -24,8 +30,8 @@ function App() {
       </div>
 
       <Pagination
-        currentPage={1}
-        totalPages={5}
+        currentPage={currentPage}
+        totalPages={totalPages}
         onPageChange={handlePageChange}
       />
 
