@@ -6,6 +6,10 @@ import { SearchFormSection } from "./components/SearchFormSection.jsx"
 
 function App() {
 
+  const handlePageChange = (page) => {
+    console.log(`Cambiando a la página ${page}`);
+  }
+
   return (
     <>
 
@@ -19,7 +23,11 @@ function App() {
 
       </div>
 
-      <Pagination />
+      <Pagination
+        currentPage={1}
+        totalPages={5}
+        onPageChange={handlePageChange}
+      />
 
       <Footer />
 
