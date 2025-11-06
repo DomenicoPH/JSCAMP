@@ -1,7 +1,7 @@
 import { useId } from 'react';
 import styles from './SearchFormSection.module.css';
 
-export function SearchFormSection(){
+export function SearchFormSection({ onSearch, onTextFilter }){
   const idText = useId();
   const idTechnology = useId();
   const idLocation = useId();
@@ -9,7 +9,19 @@ export function SearchFormSection(){
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('submit del formulario de búsqueda')
+    
+    const formData = new FormData(event.target)
+    const filters = {
+      technology: formData.get(idTechnology),
+      location: formData.get(idLocation),
+      experienceLevel: formData.get(idExperienceLevel),
+    }
+    onSearch(filters)
+  }
+
+  const handleTextChange = (event) => {
+    const text = event.target.value;
+    onTextFilter(text);
   }
 
   return(
@@ -31,8 +43,9 @@ export function SearchFormSection(){
                 className={styles.formInput} 
                 name={idText}
                 id="empleos-search-input" 
-                required type="text" 
-                placeholder="Buscar trabajos, empresas o habilidades" 
+                type="text" 
+                placeholder="Buscar trabajos, empresas o habilidades"
+                onChange={handleTextChange}
               />
               <button type="submit" className="">Buscar</button>
             </div>
